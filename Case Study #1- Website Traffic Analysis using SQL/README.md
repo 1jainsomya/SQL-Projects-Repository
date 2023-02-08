@@ -1,4 +1,4 @@
-##	Website Traffic Analysis SQL 
+##	Website Traffic Analysis SQL Document
 ##	Somya Jain
 
 ### Q1. Finding the Top Traffic Sources
