@@ -1,4 +1,4 @@
-# ![image](https://user-images.githubusercontent.com/38453077/217509754-c33e2910-d02c-4c9c-ac75-a5aac66e1f80.png) Website Traffic Analysis using SQL
+# ![image](https://user-images.githubusercontent.com/38453077/217509919-b8fc73e2-be21-4f06-9d1a-73e24f242241.png) Website Traffic Analysis using SQL
 
 ## 📚 Table of Contents
 
