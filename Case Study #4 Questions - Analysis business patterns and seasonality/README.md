@@ -19,6 +19,7 @@ GROUP BY 1, 2
 
 ### Conclusion-
 March 2012 was lowest month in terms of orders and sessions and November month was highest in orders and sessions
+
 SELECT
 	MIN(DATE(website_sessions.created_at)) AS week_start_date,
     COUNT(DISTINCT website_sessions.website_session_id) AS sessions,
@@ -30,6 +31,9 @@ WHERE website_sessions.created_at < '2013-01-01'
 GROUP BY
 	YEARWEEK(website_sessions.created_at)
 ;
+
+![image](https://user-images.githubusercontent.com/38453077/217523119-219c029a-a838-4a3a-b276-756833b9601b.png)
+
 
  ### Conclusion-
 There is increasing trend in orders and session every week and we saw peak of it on 46 and 47 week
