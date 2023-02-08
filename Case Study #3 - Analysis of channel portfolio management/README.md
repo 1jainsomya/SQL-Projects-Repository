@@ -1,5 +1,5 @@
 ##	Analysis of channel portfolio management Document
-##	Analysing which channels generate more search and paid and free traffic comparison along with device type traffic distribution
+####	Analysing which channels generate more search and paid and free traffic comparison along with device type traffic distribution
 ####	Author Somya Jain
 
 ### Q1. Comparing channel portfolio sources
