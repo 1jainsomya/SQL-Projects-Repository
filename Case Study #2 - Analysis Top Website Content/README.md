@@ -1,4 +1,4 @@
-##	Analysing top website content.
+##	Analysing top website content Document
 ##	Which pages are seen most by users and most common entry pages and how those pages convert to business objective. ALso analyze where people are exiting the website 
 ####	Author Somya Jain
 
@@ -8,12 +8,16 @@ create temporary table first_page_view_temp
 select website_session_id,min(website_pageview_id) as min_pv_id from `mavenfuzzyfactory`.`website_pageviews` group by`website_session_id`;
 select * from first_page_view_temp as  fpv left join website_pageviews as wp on fpv.min_pv_id=wp.website_pageview_id ;
 
+![image](https://user-images.githubusercontent.com/38453077/217519251-e5735147-a641-4c4b-bb59-cc174bcf0755.png)
+
  
 
 ### Q1. Identifying Top Websites Pages
 select pageview_url,count( distinct website_pageview_id) as cnt_website_session from `mavenfuzzyfactory`.`website_pageviews` where created_at<'2012-06-09'
 group by pageview_url order by count( distinct website_pageview_id) desc ;
- 
+
+![image](https://user-images.githubusercontent.com/38453077/217519316-a59301f8-c639-40d2-a7d4-c5be032a5f4a.png)
+
 
 ### Conclusion-
 Home page is top viewed pages by website sessions 
@@ -26,6 +30,9 @@ select
     from website_pageviews
     where created_at<'2012-06-12'
     group by website_session_id;
+    
+![image](https://user-images.githubusercontent.com/38453077/217519360-e57d0f49-93b0-42d4-a7e5-706d29a3a806.png)
+
 
 ### Conclusion-
 Home page is the only entry page  
@@ -78,7 +85,9 @@ SELECT
 FROM sessions_w_landing_page
 	LEFT JOIN bounced_sessions
 		ON sessions_w_landing_page.website_session_id = bounced_sessions.website_session_id;
-        
+ 
+ ![image](https://user-images.githubusercontent.com/38453077/217519426-5916aeec-02aa-498f-ac7e-6ea35d610136.png)
+
  
 ### Conclusion-
 Very high bounce rate on paid traffic on home page
@@ -132,9 +141,11 @@ GROUP BY
 HAVING
 	COUNT(website_pageviews.website_pageview_id) = 1;
 
- 
+ ![image](https://user-images.githubusercontent.com/38453077/217519650-72107973-d816-423f-a597-f44d227b08a2.png)
+
 ###  Conclusion-
 On test landing page we got more got per session compared to old one 
+
 Q5. LANDING PAGE TREND ANALYSIS
 #STEP 1: finding the first website_pageview_id for relevant sessions and website_pageview_id count
 CREATE TEMPORARY TABLE sessions_w_min_pv_and_view_count
@@ -177,6 +188,10 @@ COUNT(DISTINCT CASE WHEN landing_page = '/lander-1' THEN website_session_id ELSE
 FROM sessions_w_counts_lander_and_created_at
 GROUP BY
 YEARWEEK(session_created_at);
+ 
+![image](https://user-images.githubusercontent.com/38453077/217519702-4c1eee3d-f5a0-464c-96d4-e6455e39e93f.png)
+
+
  
 ### Conclusion-
 Both pages were getting traffic for a while and after that completely shifted on a new landing page 
